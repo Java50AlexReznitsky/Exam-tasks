@@ -1,29 +1,11 @@
 "use strict";
-const aChar = 'a'.charCodeAt(0);
-const zChar = 'z'.charCodeAt(0);
-function shiftRound(string, shift) {
-    shift < 0 ? shift = Math.abs(shift) : shift;
-    let checkedSymbol;
-    const strArr = [];
-    for (const char of string) {
-        checkedSymbol = checkSymbol(char);
-        if ((checkedSymbol + shift) > zChar) {
-            checkedSymbol = (aChar + Math.abs(zChar - (shift + checkedSymbol))) - 1;
-            strArr.push(String.fromCharCode(checkedSymbol));
-        }
-        else if (Number.isFinite(checkedSymbol)) {
-            let shiftedCode = checkedSymbol + shift;
-            strArr.push(String.fromCharCode(shiftedCode));
-        }
-        else {
-            strArr.push(char);
-        }
-    }
-    return strArr.join("");
-}
-function checkSymbol(symbol) {
-    let symbolCode = symbol.charCodeAt(0);
-    return (symbolCode >= aChar && symbolCode <= zChar) ? symbolCode : NaN;
-}
-console.log(shiftRound("aabx!", -4));
+Object.defineProperty(exports, "__esModule", { value: true });
+const rectangle_1 = require("./rectangle");
+const displayProps_1 = require("./displayProps");
+const square_1 = require("./square");
+const Container_1 = require("./Container");
+const rectangle = new rectangle_1.Rectangle(3, 4);
+const square = new square_1.Square(10);
+const container = new Container_1.Container([rectangle, square]);
+(0, displayProps_1.displaySquarePerimeter)(container);
 //# sourceMappingURL=app.js.map

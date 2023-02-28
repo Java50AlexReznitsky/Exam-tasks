@@ -4,3 +4,4 @@ export class CipherRightShift extends CipherImpl {
     //ciphering right shift ' ' + shift
     //ciphering left shift '~' + shift
 }
+;

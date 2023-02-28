@@ -7,7 +7,7 @@ export class CipherImpl implements Cipher {
     }
     decipher(cipherText: string): string {
         //TODO
-        throw new Error("Method not implemented.");
+        throw new Error("Method not implemented.")
     }
 
 }
